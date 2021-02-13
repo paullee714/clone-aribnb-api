@@ -25,7 +25,7 @@ SECRET_KEY = "cc)*5=(s+i2-&9x7&&&o+y7$g5!db3tvu85ykok#mwxf#6gir2"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -46,7 +46,9 @@ PROJECT_APPS = [
     "rooms.apps.RoomsConfig",
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    "rest_framework",
+]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 
@@ -86,8 +88,13 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        'ENGINE': 'django.db.backends.mysql',
+        # "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        'NAME': 'airbnb_backend',
+        'USER': 'airbnb',
+        'PASSWORD': 'qwerqwer123',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
@@ -132,3 +139,10 @@ MEDIA_URL = "/media/"
 # Auth
 
 AUTH_USER_MODEL = "users.User"
+
+
+#Django Rest Framework Config
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS" : 'rest_framework.pagination.PageNumberPagination',
+    "PAGE_SIZE": 10,
+}
