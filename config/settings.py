@@ -90,7 +90,7 @@ DATABASES = {
     "default": {
         'ENGINE': 'django.db.backends.mysql',
         # "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        'NAME': 'airbnb_backend',
+        'NAME': 'airbnb',
         'USER': 'airbnb',
         'PASSWORD': 'qwerqwer123',
         'HOST': '127.0.0.1',
