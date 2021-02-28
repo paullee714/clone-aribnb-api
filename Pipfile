@@ -13,6 +13,7 @@ pillow = "*"
 django-seed = "*"
 mysqlclient = "*"
 djangorestframework = "*"
+pyjwt = "*"
 
 [requires]
 python_version = "3.9"
